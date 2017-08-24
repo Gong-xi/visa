@@ -1,0 +1,26 @@
+<div id="main">
+    <ion-header-bar class="bar-stable item-icon-right" ng-include="'tck/header.html'">
+
+    </ion-header-bar>
+    <!--设置has-header和has-footer意为有头有尾-->
+    <ion-content class=" has-header has-footer">
+        <div class="list list-inset">
+            <label class="item item-input">
+                <input type="text" placeholder="搜索国家或者地区...." ng-keyup="select()" ng-model="inputTxt.kw">
+                <i class="icon ion-ios-search"></i>
+            </label>
+        </div>
+        <div class="list">
+            <a class="item item-thumbnail-left" href="#/detail/{{v.did}}" ng-repeat="(k,v) in list">
+                <img ng-src="img/{{v.img_sm}}">
+                <h2>{{v.name}}</h2>
+                <p class="price">{{"￥"+v.price}}</p>
+            </a>
+            <ion-infinite-scroll on-infinite="add()" ng-if="exist"></ion-infinite-scroll>
+            <p ng-hide="hasMore" class="text-center assertive-bg">没有更多可以加载了!</p>
+        </div>
+    </ion-content>
+    <ion-footer-bar ng-include="'tck/footer.html'">
+
+    </ion-footer-bar>
+</div>

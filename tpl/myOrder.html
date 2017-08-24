@@ -1,0 +1,15 @@
+<ion-header-bar ng-include="'tck/header.html'"></ion-header-bar>
+<ion-content class="has-footer has-header">
+    <h1 class="text-center">个人订单页面</h1>
+    <div class="list list-inset">
+        <div class="item item-thumbnail-left" ng-repeat="(k,v) in list">
+            <img ng-src="img/{{v.img_sm}}" alt=""/>
+            <p>{{"购物车编号："+v.ctid}}</p>
+            <p>{{"产品编号："+v.did}}</p>
+            <p>{{"产品名称："+v.name}}</p>
+            <p>{{"产品单价："+v.price}}</p>
+            <p>{{"下定数量："+v.dishCount}}</p>
+        </div>
+    </div>
+</ion-content>
+<ion-footer-bar ng-include="'tck/footer.html'"></ion-footer-bar>

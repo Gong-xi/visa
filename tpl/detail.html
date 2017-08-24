@@ -1,0 +1,22 @@
+<div id="detail">
+    <ion-header-bar ng-include="'tck/header.html'"></ion-header-bar>
+    <!--中间部分-->
+    <ion-content class="has-footer has-header">
+        <div class="card">
+            <div class="item item-divider">
+                <a href="#/start">首页</a>
+                /详情
+            </div>
+            <div class="item item-text-wrap">
+                <img ng-src="img/{{list.img_lg}}">
+                <p>{{list.detail}}</p>
+                <p class="price">{{"¥"+list.price}}</p>
+            </div>
+            <div class="item item-divider text-right">
+                <button class="button button-small button-balanced" ng-click="addToCart()" >添加到购物车</button>
+                <button class="button button-small button-energized" ng-click="jump('main')">我要看看</button>
+            </div>
+        </div>
+    </ion-content>
+    <ion-footer-bar ng-include="'tck/footer.html'"></ion-footer-bar>
+</div>

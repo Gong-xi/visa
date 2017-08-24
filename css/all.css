@@ -1,0 +1,25 @@
+/*开始页面*/
+#start h1{
+    font-size:50px;
+}
+#start{
+    margin:0 auto;
+    margin-top:150px;
+}
+#start img{
+    cursor:pointer;
+}
+/*header*/
+.header-left{
+    margin-left:10px;
+}
+/*main页面*/
+#main .price{
+    color:#EB9694;
+}
+.cursor{
+    cursor:pointer;
+}
+#detail .price{
+    color:#EB9694;
+}

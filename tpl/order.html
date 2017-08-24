@@ -1,0 +1,27 @@
+<div id="order">
+    <ion-header-bar ng-include="'tck/header.html'"></ion-header-bar>
+    <ion-content class="has-header has-footer">
+        <div class="list list-inset">
+            <label class="item item-input">
+                <span class="input-label">联系人：</span>
+                <input type="text" placeholder="徐旭" ng-model="input.name">
+            </label>
+            <label class="item item-input">
+                <span class="input-label">性别：</span>
+            </label>
+            <ion-radio value="1" ng-model="input.sex">先生</ion-radio>
+            <ion-radio value="2" ng-model="input.sex">女士</ion-radio>
+            <label class="item item-input">
+                <span class="input-label" >联系电话</span>
+                <input type="text" placeholder="135124422" ng-model="input.phone">
+            </label>
+            <label class="item item-input">
+                <span class="input-label">快递地址</span>
+                <textarea ng-model="input.addr">宝安区....</textarea>
+            </label>
+            <button class="button button-block button-positive" ng-click="order()">确定下单</button>
+            <p class="text-center positive-bg">{{success}}</p>
+        </div>
+    </ion-content>
+    <ion-footer-bar ng-include="'tck/footer.html'"></ion-footer-bar>
+</div>

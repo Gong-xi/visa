@@ -1,0 +1,42 @@
+<div id="cart">
+    <ion-header-bar align-title="center">
+    <h1 class="title">购物车</h1>
+    <button class="button button-clear button-dark" ng-click="toggleEdit()">{{editText}}</button>
+    </ion-header-bar>
+    <!--中间部分-->
+    <ion-content class="has-footer">
+        <h3 class="text-center">我的购物车</h3>
+        <div class="list list-inset">
+            <div class="item" ng-repeat="(k,v) in cart">
+                <div class="row">
+                    <div class="col col-20">
+                        <img ng-src="img/{{v.img_sm}}" alt=""/>
+                    </div>
+                    <div class="col" ng-hide="editEnable">
+                        <h3>{{v.name}}</h3>
+                        <p>{{v.price+"x"+v.dishCount}}</p>
+                        <div class="text-right ">
+                            <p style="display: inline-block;vertical-align:middle">合计:{{v.price*v.dishCount}}</p>
+                            <button
+                                    ng-click="jump('order',{did:v.did})"
+                                    style="display: inline-block;vertical-align:middle"
+                                    class="button button-small button-balanced">
+                                我要下单
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col" ng-show="editEnable">
+                       <button style="vertical-align: middle;"
+                               ng-click="delete($index)" class="button">-</button>
+                        <input style="width:15px;text-align:center;display:inline-block;vertical-align: middle;" type="text"
+                               ng-model="v.dishCount"/>
+                        <button ng-click="add($index)"
+                                style="vertical-align: middle;"
+                                class="button ">+</button>
+                    </div>
+                </div>
+            </div>
+            </div>
+    </ion-content>
+    <ion-footer-bar ng-include="'tck/footer.html'"></ion-footer-bar>
+</div>
